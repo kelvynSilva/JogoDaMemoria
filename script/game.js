@@ -57,10 +57,8 @@ let game = {
     },
 
     checkGameOver(){
-        return this.cards.filter(card=>!card.flipped).length == 0;
+        return this.cards
     },
-
-
     cards : null,
 
     createCardsFromTechs: function (){
@@ -74,7 +72,7 @@ let game = {
 
         this.shuffleCards();
 
-       return this.cards;
+       return this.cards.filter(card=>!card.flipped) == 0;
     },
     
     createPairFromTech: function (tech){
