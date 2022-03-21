@@ -30,7 +30,7 @@ let game = {
            return true;
        }else{
            this.secondCard = card;
-           this.secondCard.firstCard = true;
+           this.secondCard.flipped = true;
            this.lockMode = true;
            return true;
        }
@@ -57,7 +57,7 @@ let game = {
     },
 
     checkGameOver(){
-        return this.cards
+        return this.cards.filter(card=>!card.flipped) == 0;
     },
     cards : null,
 
@@ -72,7 +72,7 @@ let game = {
 
         this.shuffleCards();
 
-       return this.cards.filter(card=>!card.flipped) == 0;
+      
     },
     
     createPairFromTech: function (tech){

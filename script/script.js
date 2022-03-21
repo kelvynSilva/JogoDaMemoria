@@ -60,7 +60,7 @@ function flipCard(){
         if (game.secondCard){
             if (game.checkMetch()){
                 game.clearCards();
-                if(game.checkGameOve()){
+                if(game.checkGameOver()){
                     let gameOverLayer = document.getElementById('gameOver');
                     gameOverLayer.style.display = 'flex'
                 }
